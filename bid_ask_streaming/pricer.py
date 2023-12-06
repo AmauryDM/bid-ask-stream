@@ -3,6 +3,8 @@ from datetime import datetime
 
 import numpy as np
 
+from bid_ask_streaming.utils import timer
+
 
 class Pricer:
     def __init__(self, origin):
@@ -15,6 +17,7 @@ class Pricer:
         ask_price = bid_price + ask
         return round(bid_price, 2), round(ask_price, 2)
 
+    @timer
     def get_bid_ask(self):
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         bid_price, ask_price = self.get_prices()

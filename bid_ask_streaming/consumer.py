@@ -3,8 +3,9 @@ import time
 
 import pandas as pd
 
-import bid_ask_streaming.constants as constants
+import bid_ask_streaming.utils as constants
 from bid_ask_streaming.analyzer import Analyzer
+from bid_ask_streaming.utils import timer
 
 
 class Consumer(threading.Thread):
@@ -13,6 +14,7 @@ class Consumer(threading.Thread):
         self.streaming = streaming
         self.window = window
 
+    @timer
     def run(self):
         capacity = constants.CAPACITY
         buffer = constants.buffer

@@ -1,8 +1,9 @@
 import threading
 import time
 
-import bid_ask_streaming.constants as constants
+import bid_ask_streaming.utils as constants
 from bid_ask_streaming.pricer import Pricer
+from bid_ask_streaming.utils import timer
 
 
 class Producer(threading.Thread):
@@ -10,6 +11,7 @@ class Producer(threading.Thread):
         super().__init__()
         self.streaming = streaming
 
+    @timer
     def run(self):
         capacity = constants.CAPACITY
         buffer = constants.buffer
