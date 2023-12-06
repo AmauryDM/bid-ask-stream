@@ -37,20 +37,26 @@ class Consumer(threading.Thread):
             data = pd.concat(
                 [
                     data,
-                    pd.DataFrame(item, columns=["price", "bid/ask", "timestamp"]),
+                    pd.DataFrame(
+                        item,
+                        columns=["price", "bid/ask", "timestamp"],
+                    ),
                 ]
             )
             ask_data = data[data["bid/ask"] == "1"]
 
             analyzer = Analyzer(self.window)
-            mean, std, autocorr = analyzer.get_metrics(ask_data["price"].astype(float))
+            mean, std, autocorr = analyzer.get_metrics(
+                ask_data["price"].astype(float),
+            )
 
             if mean and std and autocorr:
                 metrics = pd.concat(
                     [
                         metrics,
                         pd.DataFrame(
-                            [[mean, std, autocorr]], columns=["mean", "std", "autocorr"]
+                            [[mean, std, autocorr]],
+                            columns=["mean", "std", "autocorr"],
                         ),
                     ]
                 )

@@ -3,7 +3,7 @@ import random
 from bid_ask_streaming.pricer import Pricer
 
 
-class TestsPricer:
+class TestPricer:
     def test_get_prices(self):
         origin = 10
         pricer = Pricer(origin)

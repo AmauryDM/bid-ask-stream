@@ -3,7 +3,7 @@ import pandas as pd
 from bid_ask_streaming.analyzer import Analyzer
 
 
-class TestsAnalyzer:
+class TestAnalyzer:
     def test_get_no_metrics(self):
         data = pd.Series([10, 11])
         window = 3
