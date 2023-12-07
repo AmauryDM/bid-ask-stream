@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bid_ask_streaming"
+version = "0.0.1"
+authors = [
+  { name="Amaury de Miguel", email="amaury.de.miguel@gmail.com" },
+]
+description = "Streaming of bid/ask prices"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/AmauryDM/bid-ask-streaming"
+Issues = "https://github.com/AmauryDM/bid-ask-streaming/issues"
